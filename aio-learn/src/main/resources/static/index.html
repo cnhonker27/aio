@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>AioServerIndex</title>
+</head>
+<body style="text-align: center;">
+<h2>WebSocket测试</h2>
+<div>
+    <h1>AioServerIndex</h1>
+    <h3>你好Aio</h3>
+    <input type="text" id="txt" value="{'测试':'测试'}"/>
+    <button onclick="sendWebSocket()">发送</button><br>
+    <button onclick="checkWebSocket()">测试WebSocket</button>
+    <button onclick="connectWebSocket()">连接WebSocket</button>
+    <button onclick="closeWebSocket()">关闭WebSocket</button><br>
+    <hr>
+    <div id="message"></div>
+    <img src="img/websocket.png" alt="">
+</div>
+</body>
+<script src="js/jquery/jquery.min.js"></script>
+<script type="text/javascript">
+
+    var websocket = null;
+
+    function checkWebSocket(){
+        if ("WebSocket" in window) {
+            // alert("您的浏览器支持 WebSocket!");
+            setMessageInnerHTML("您的浏览器支持 WebSocket!");
+        }
+        else {
+            // 浏览器不支持 WebSocket
+            // alert("您的浏览器不支持 WebSocket!");
+            setMessageInnerHTML("您的浏览器不支持 WebSocket!");
+        }
+    }
+
+    // 连接  WebSocket
+    function connectWebSocket(){
+        // 打开一个 web socket
+        var ip="127.0.0.1";
+       // var ip="randspace.cn";
+        var port="6951"
+        var url=ip+":"+port;
+        websocket = new WebSocket("ws://"+url+"/index");
+        websocket.onopen = function() {
+            // Web Socket 已连接上，使用 send() 方法发送数据
+            setMessageInnerHTML("WebSocket 已连接...");
+        };
+        websocket.onmessage = function(evt) {
+            var received_msg = evt.data;
+            setMessageInnerHTML("收到消息：" + received_msg);
+        };
+        websocket.onclose = function()
+        {
+            setMessageInnerHTML("WebSocket 已关闭...");
+        };
+    }
+
+    // 向WebSocket服务端发送消息
+    function sendWebSocket(){
+        if (websocket){
+            if (websocket.readyState == websocket.OPEN) {
+                var message = document.getElementById('txt').value;
+                websocket.send(message);
+            } else {
+                setMessageInnerHTML("WebSocket 未连接...");
+            }
+        }else {
+            setMessageInnerHTML("WebSocket 未创建...");
+        }
+    }
+
+    // 监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
+    window.onbeforeunload = function() {
+        closeWebSocket();
+    }
+
+    // 关闭WebSocket连接
+    function closeWebSocket() {
+        websocket.close();
+    }
+
+    // 将消息显示在网页上
+    function setMessageInnerHTML(innerHTML) {
+        document.getElementById('message').innerHTML += innerHTML + '<br/>';
+    }
+</script>
+</html>

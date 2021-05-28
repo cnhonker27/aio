@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aio</title>
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../js/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/wschat/wschat.css" media="all">
+    <script type="text/javascript" src="../js/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/layui/layui.js"></script>
+    <script type="text/javascript" src="../js/date.js"></script>
+    <script type="text/javascript" src="../websocket/js/aiochat.js"></script>
+
+</head>
+<body>
+    <div class="aio-container">
+        <div class="aio-setting-side">
+            <ul class="aio-msg-side-menu">
+                <li class="menu-list"><a class="aio-user-logo"><img class="aio-user-logo-img" src="../img/100.jpg"></a></li>
+                <li class="menu-list">
+                    <i class="layui-icon layui-icon-chat"></i>
+                    <span class="layui-badge-dot" style="z-index: 900">10</span>
+                </li >
+                <li class="menu-list"><i class="layui-icon layui-icon-user"></i></li>
+                <li class="menu-list"><i class="layui-icon layui-icon-set"></i></li>
+            </ul>
+        </div>
+        <div class="aio-msg-side">
+            <input class="aio-msg-side-search">
+            <i class="layui-icon layui-icon-search"></i>
+            <ul class="aio-msg-side-menu">
+                <li class="menu-list">
+                    <a class="aio-msg-group">
+                        <img class="aio-msg-group-avatar" src="../img/100.jpg">
+                    </a>
+                    <h2>123123123123</h2>
+                    <div class="aio-msg-info">
+                        <span>123</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="aio-msg-container">
+            <div class="aio-msg-container-header">
+                <h2>123</h2>
+            </div>
+            <div class="aio-msg-container-container">
+
+            </div>
+            <div class="aio-msg-container-send-area">
+                <div class="aio-msg-container-send-tool">
+                    <i class="layui-icon layui-icon-face-smile"></i>
+                </div>
+                <div class="aio-msg-container-send-content">
+                    <textarea class="aio-msg-container-send-textarea"></textarea>
+                </div>
+                <div class="aio-msg-container-send-button">
+                    <span>发送</span>
+                    <ul>
+                        <li >按Enter键发送消息</li>
+                        <li >按Ctrl+Enter键发送消息</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

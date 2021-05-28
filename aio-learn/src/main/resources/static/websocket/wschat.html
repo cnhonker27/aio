@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <title>Aio聊天室</title>
+    <style type="text/css" media="screen">
+        *{margin:0;padding:0;}
+        #wrap{margin:10px auto; width:80%; height:99%;}
+        .unit{margin-bottom:5px; padding:5px; border:solid 1px #000; height:auto;  clear:both;box-sizing:border-box;}
+        .unit label{text-align:right;width:100px;line-height: 30px; display:inline-block;}
+        .unit input{line-height: 30px; width:100px; height:30px;}
+        .log {font-size:11px; font-family:Courier; overflow: auto; height:100%; background:black;width:85%;float:left}
+        .log p{padding:2px;margin:0;}
+        .content{width:100%;overflow:hidden;height:80%;margin:0 0 5px 0;}
+        .online{width: 15%;height: 100%;float:right;background: #FCFCFC;border:solid 1px #000;box-sizing:border-box;}
+    </style>
+    <script type="text/javascript" src="../js/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../js/layui/layui.js"></script>
+    <script type="text/javascript" src="../js/date.js"></script>
+    <script type="text/javascript" src="../websocket/js/wschat.js"></script>
+</head>
+
+<body >
+<div id="wrap" style="height:600px;">
+    <div class="unit">
+        <input type="hidden"  id="username" value=""/>
+        <input type="hidden"  id="userid" value=""/>
+        <!-- <label >用户名:</label>
+         <label style="width: 60px;">密码:</label>
+         <input  id="password" value ="123"/>-->
+        <!--<input onclick="javascript:connect();"  type="button" value="登录" />-->
+        <input onclick="javascript:disConnect();" type="button" value="退出" />
+        <!--<input onclick="javascript:showServerConfig(this);" type="button" value="服务器配置" />-->
+    </div>
+    <!--<div class="unit" id="serverConfigId" style="display: none;">
+        <label >服务器IP:</label>
+        <input  id="serverIp" value="localhost"/>
+        <label>端口号:</label>
+        <input  id="port" value ="8888"/>
+    </div>-->
+    <div class="unit">
+        <label>操作:</label>
+        <input id="join_group" style="width:100px;" placeholder="输入好友ID" value="1000" readonly/>
+        <input type="button" value="加入群组" onclick="joinGroup();" style="width: 150px;"/>
+        <!--<input type="button" value="鉴权命令" onclick="authCmd();"/>-->
+        <!--<input type="button" value="心跳命令" onclick="heartbeatCmd();"/>-->
+       <!-- <input type="button" value="获取指定好友历史消息" onclick="friendHistoryCmd();" style="width: 150px;"/>-->
+       <!-- <input id="history_friend_id" style="width:100px;" placeholder="输入好友ID"/>
+        <input type="button" value="获取指定群组历史消息" onclick="groupHistoryCmd();" style="width: 150px;"/>
+        <input id="history_group_id" style="width:100px;" placeholder="输入群组ID"/>-->
+    </div>
+    <div class="unit">
+        <label>聊天记录:</label>
+        <input type="button" value="清空记录" onclick="clearLogs();"/>
+    </div>
+    <div class="content">
+
+        <div id="logs" class="unit log">
+        </div>
+        <div id="onlinePanel" class="online">
+            &nbsp;在线成员(0/0)
+        </div>
+    </div>
+    <div class="unit">
+        <label >输入内容:</label>
+        <input id="content" style="width:500px;" onkeydown="keyDown(event)"/>
+        <input onclick="javascript:sendGroup()" id="sendGroupBtn"  type="button"  value="群聊" />&nbsp;
+        <!--<input onclick="javascript:send()" id="sendBtn"  type="button"  value="私聊" />-->
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,226 @@
+.aio-container{
+    position: relative;
+    top: 120px;
+    width: 850px;
+    height: 618px;
+    margin: auto;
+}
+
+.aio-setting-side{
+    width: 60px;
+    background-color: #23262E;;
+}
+
+.aio-msg-side{
+    width: 230px;
+    background-color:#f2f2f2;
+
+}
+.aio-msg-side>ul>li{
+    margin-top: 5px;
+    padding: 0px 10px 10px 50px;
+    border-bottom: 1px dotted #e2e2e2;
+}
+.aio-msg-side>ul>li:hover{
+    background-color: #e2dddd;
+    cursor: pointer;
+}
+.aio-msg-side-search{
+    height: 30px;
+    line-height: 30px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+    border-radius: 2px;
+    border-color: #e6e6e6;
+    display: block;
+    padding-left:30px ;
+    margin-top: 10px;
+    margin-left: 2px;
+    width: 84%;
+}
+
+.aio-msg-side .layui-icon-search{
+    position: absolute;
+    left: 63px;
+    top: 1px;
+    width: 30px;
+    line-height: 28px;
+    text-align: center;
+    color: #d2d2d2;
+    font-size: 30px;
+    margin-top: 12px;
+}
+
+.aio-msg-group{
+    position: absolute;
+    left: 63px;
+}
+.aio-msg-group-avatar{
+    width: 45px;
+    height: 45px;
+    display: block;
+}
+
+.aio-msg-info{
+    position: relative;
+    font-size: 13px;
+    color: #999;
+    height: 20px;
+    line-height: 20px;
+}
+
+.menu-list>i{
+    font-size: 30px;
+}
+
+.menu-list>span{
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #ff5722;
+    position: absolute;
+    line-height: 18px;
+    margin-left: -10px;
+
+}
+
+.aio-user-logo .aio-user-logo-img{
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+.aio-user-logo-img:hover{
+    cursor: pointer;
+}
+
+.aio-setting-side ul>li{
+    list-style-type: none ;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.aio-msg-container{
+    background-color: #e4efec;
+    display: inline-block;
+    width: 540px;
+
+}
+
+.aio-msg-container-header{
+    height: 60px;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid  #d0d0d0;
+    line-height: 60px;
+}
+.aio-msg-container-container{
+    height: 400px;
+    overflow: auto;
+}
+.aio-msg-container-container::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 3px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+.aio-msg-container-container::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: #535353;
+}
+
+.aio-msg-container-container::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background: #EDEDED;
+}
+.aio-msg-container-send-area{
+    height: 156px;
+    background-color:#fff ;
+    border-top: 1px solid  #d0d0d0;
+}
+
+.aio-msg-container-send-tool{
+    height: 20px;
+    line-height: 20px;
+    width: 100%;
+    margin:  10px 10px;
+}
+.aio-msg-container-send-tool .layui-icon{
+    font-size: 25px;
+    cursor: pointer;
+}
+.aio-msg-container-send-tool .layui-icon:hover{
+    color: #00FF00;
+}
+
+.aio-msg-container-send-content{
+    line-height: 10px;
+    background-color:#fff ;
+    border-top: 1px solid  #d0d0d0;
+}
+.aio-msg-container-send-textarea{
+    border: none;
+    width: 500px;
+    height: 80px;
+    padding: 2px 10px 0 10px;
+    resize: none;
+}
+
+.aio-msg-container-send-textarea::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 3px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 1px;
+}
+.aio-msg-container-send-textarea::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    background: #535353;
+}
+
+.aio-msg-container-send-textarea::-webkit-scrollbar-track {/*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background: #EDEDED;
+}
+
+.aio-msg-container-send-button{
+}
+
+.aio-msg-container-send-button>span{
+    border-radius:5%;
+    position: absolute;
+    right: 49px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+    line-height: 32px;
+    margin-left: 5px;
+    padding: 0 20px;
+    background-color: #5FB878;
+    color: #fff;
+    cursor: pointer;
+}
+.aio-msg-container-send-button>ul>li{
+    display: none;
+}
+
+.aio-container .aio-setting-side,.aio-msg-side,.aio-msg-container{
+    height: 618px;
+    float: left;
+    border-top: 1px solid  #d0d0d0;
+    border-bottom: 1px solid  #d0d0d0;
+    border-right: 1px solid  #d0d0d0;
+}
+.layui-icon-chat:hover{
+    color: #00FF00;
+    cursor: pointer;
+}
+.layui-icon-user:hover{
+    color: #00FF00;
+    cursor: pointer;
+}
+.layui-icon-set:hover{
+    color: #00FF00;
+    cursor: pointer;
+}
+
